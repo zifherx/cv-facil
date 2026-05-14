@@ -1,4 +1,4 @@
-import { updateAvatarHandler } from "@/modules/profile/presentation/ProfileController"
+import { updateAvatarHandler } from "@/modules/profile/presentation"
 import { PARAMS_PROFILE_ROUTE } from "@/shared/types"
 import { NextRequest } from "next/server"
 

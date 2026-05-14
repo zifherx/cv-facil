@@ -1,4 +1,4 @@
-import { mongoIdSchema } from "@/shared/schemas/shared.schema"
+import { mongoIdSchema } from "@/shared/schemas"
 import z from "zod"
 
 // ─── Address sub-schema (reusable) ────────────────────────────────────────────
