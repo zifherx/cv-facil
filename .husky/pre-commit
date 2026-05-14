@@ -1,6 +1,3 @@
-echo "Formatting with Prettier"
-pnpm format
-
 echo "Linting Staged Files"
 pnpm lint
 
