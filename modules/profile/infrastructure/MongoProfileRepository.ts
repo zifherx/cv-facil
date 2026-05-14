@@ -1,11 +1,14 @@
-import { IProfileRepository } from "@/modules/profile/domain/IProfileRepository"
-import { ProfileNotFoundError } from "../domain/Profile-Errors"
 import {
   CreateProfileDTO,
+  IProfileRepository,
   Profile,
+  ProfileNotFoundError,
   UpdateProfileDTO,
-} from "../domain/Profile.entity"
-import { IProfileDocument, ProfileModel } from "./ProfileModel"
+} from "@/modules/profile/domain"
+import {
+  IProfileDocument,
+  ProfileModel,
+} from "@/modules/profile/infrastructure"
 
 export class MongoProfileRepository implements IProfileRepository {
   // ─── Domain mapper ──────────────────────────────────────────────────────────
@@ -73,7 +76,7 @@ export class MongoProfileRepository implements IProfileRepository {
     const doc = await ProfileModel.findOneAndUpdate(
       { userId },
       { $set: flatUpdate },
-      { new: true, runValidators: true }
+      { after: true, runValidators: true }
     )
     if (!doc) throw new ProfileNotFoundError(userId)
     return this.toDomain(doc)
@@ -86,7 +89,7 @@ export class MongoProfileRepository implements IProfileRepository {
     const doc = await ProfileModel.findOneAndUpdate(
       { userId },
       { $set: { avatarUrl } },
-      { new: true }
+      { after: true }
     )
     if (!doc) throw new ProfileNotFoundError(userId)
     return this.toDomain(doc)
