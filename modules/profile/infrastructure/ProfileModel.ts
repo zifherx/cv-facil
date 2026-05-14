@@ -45,7 +45,7 @@ const ProfileSchema = new Schema<IProfileDocument>(
     email: { type: String, required: true, lowercase: true, trim: true },
     phone: { type: String, default: "" },
     avatarUrl: { type: String, default: null },
-    address: { type: AddressSchema, default: () => {} },
+    address: { type: AddressSchema, default: {} },
   },
   {
     timestamps: true,
