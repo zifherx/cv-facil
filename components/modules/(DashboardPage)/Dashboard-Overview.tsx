@@ -50,7 +50,7 @@ export function DashboardOverview() {
   ]
 
   return (
-    <div className="grid gap-4 border-2 border-black sm:grid-cols-2 md:grid-cols-3">
+    <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
       {STATS_DASHBOARD_PAGE.map((stat) => {
         const IconStat = stat.icon
 

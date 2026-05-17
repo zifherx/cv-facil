@@ -1,23 +1,26 @@
 import { AppSidebar } from "@/components/layout/(dashboard)/App-Sidebar"
+import { DashboardHeader } from "@/components/layout/(dashboard)/Dashboard-Header"
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
+import { cookies } from "next/headers"
 import { ReactNode } from "react"
-import { DashboardHeader } from "../../../components/layout/(dashboard)/Dashboard-Header"
 
-export default function DashboardLayout({ children }: { children: ReactNode }) {
-  // const cookieStore = await cookies()
-  // const defaultOpen = cookieStore.get("sidebar_state")?.value !== "false"
+export default async function DashboardLayout({
+  children,
+}: {
+  children: ReactNode
+}) {
+  const cookieStore = await cookies()
+  const defaultOpen = cookieStore.get("sidebar_state")?.value !== "false"
 
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={defaultOpen}>
       {/* Sidebar izquierdo */}
       <AppSidebar />
 
       {/* Area principal */}
       <SidebarInset>
         <DashboardHeader />
-        {/* <main className="flex-1 border-2 border-black p-6"> */}
-        {children}
-        {/* </main> */}
+        <main className="flex-1 p-5">{children}</main>
       </SidebarInset>
     </SidebarProvider>
   )
