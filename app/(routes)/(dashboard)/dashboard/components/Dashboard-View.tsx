@@ -1,3 +1,9 @@
+import {
+  DashboardOverview,
+  OverviewSkeleton,
+} from "@/components/modules/(DashboardPage)"
+import { Suspense } from "react"
+
 export function DashboardView() {
   return (
     <div className="space-y-6">
@@ -9,9 +15,9 @@ export function DashboardView() {
       </div>
 
       {/* Stats overview */}
-      {/* <Suspense fallback={<OverviewSkeleton />}>
+      <Suspense fallback={<OverviewSkeleton />}>
         <DashboardOverview />
-      </Suspense> */}
+      </Suspense>
 
       {/* Recent CVs */}
       {/* <Suspense fallback={<RecentCVSkeleton />}>
