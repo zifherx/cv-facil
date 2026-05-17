@@ -1,4 +1,3 @@
-import { ownerShipGuard } from "@/lib"
 import { makeProfileUseCases } from "@/modules/profile/factories"
 import {
   handleProfileError,
@@ -9,7 +8,12 @@ import {
   updateAvatarSchema,
   updateProfileSchema,
 } from "@/modules/profile/presentation"
-import { conectarBD, requireSession, withRateLimit } from "@/shared/lib"
+import {
+  conectarBD,
+  ownerShipGuard,
+  requireSession,
+  withRateLimit,
+} from "@/shared/lib"
 import { fail, ok } from "@/shared/types"
 import { NextRequest, NextResponse } from "next/server"
 

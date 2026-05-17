@@ -1,4 +1,3 @@
-import { slugify } from "@/lib"
 import {
   CreateCVDTO,
   CV,
@@ -6,6 +5,7 @@ import {
   ICVRepository,
   SectionData,
 } from "@/modules/cv/domain"
+import { slugify } from "@/shared/lib"
 
 function buildDefaultSections(): Omit<CVSection, "id">[] {
   return [

@@ -5,7 +5,8 @@ import {
   validateAdminUserId,
 } from "@/modules/admin/helpers"
 import { changeRoleSchema, listUsersSchema } from "@/modules/admin/presentation"
-import { getMongoClient, requireSession } from "@/shared/lib"
+import { requireSession } from "@/shared/lib"
+import { getMongoClient } from "@/shared/lib/mongo-client"
 import { fail, ok } from "@/shared/types"
 import { NextRequest, NextResponse } from "next/server"
 
