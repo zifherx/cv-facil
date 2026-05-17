@@ -18,9 +18,9 @@ export default async function proxy(req: NextRequest) {
     req.cookies.get("better-auth.session_token") ??
     req.cookies.get("__Secure-better-auth.session_token")
 
-  if (!sessionCookie && pathname.startsWith("/builder")) {
-    return NextResponse.redirect(new URL("/login", req.url))
-  }
+  // if (!sessionCookie && pathname.startsWith("/builder")) {
+  //   return NextResponse.redirect(new URL("/login", req.url))
+  // }
 
   return NextResponse.next()
 }
