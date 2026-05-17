@@ -11,10 +11,14 @@ import {
   updateDocumentConfigSchema,
   upsertSectionSchema,
 } from "@/modules/cv/presentation"
-import { conectarBD, requireSession, withRateLimit } from "@/shared/lib"
+import {
+  conectarBD,
+  requireSession,
+  resolveCVWithOwnership,
+  withRateLimit,
+} from "@/shared/lib"
 import { fail, ok } from "@/shared/types"
 import { NextRequest, NextResponse } from "next/server"
-import { resolveCVWithOwnership } from "../../../lib"
 
 // ─── CV handlers ──────────────────────────────────────────────────────────────
 

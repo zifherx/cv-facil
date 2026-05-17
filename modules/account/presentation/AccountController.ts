@@ -1,4 +1,3 @@
-import { ownerShipGuard } from "@/lib"
 import { makeAccountUseCases } from "@/modules/account/factories"
 import {
   handleAccountError,
@@ -9,7 +8,12 @@ import {
   createAccountSchema,
   updateNotificationPrefsSchema,
 } from "@/modules/account/presentation"
-import { conectarBD, requireSession, withRateLimit } from "@/shared/lib"
+import {
+  conectarBD,
+  ownerShipGuard,
+  requireSession,
+  withRateLimit,
+} from "@/shared/lib"
 import { fail, ok } from "@/shared/types"
 import { NextRequest, NextResponse } from "next/server"
 
