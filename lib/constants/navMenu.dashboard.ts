@@ -16,12 +16,12 @@ export const NAV_GROUPS_APP_SIDEBAR: NavGroup[] = [
     items: [
       {
         title: "Todos mis CVs",
-        href: "/dashboard/cvs",
+        href: "/cv",
         icon: FileText,
       },
       {
         title: "Crear nuevo CV",
-        href: "/dashboard/cvs/new",
+        href: "/cv/new",
         icon: Plus,
       },
     ],
@@ -31,12 +31,12 @@ export const NAV_GROUPS_APP_SIDEBAR: NavGroup[] = [
     items: [
       {
         title: "Mi perfil",
-        href: "/dashboard/settings/profile",
+        href: "/settings/profile",
         icon: User,
       },
       {
         title: "Configuración",
-        href: "/dashboard/settings/account",
+        href: "/settings/account",
         icon: Settings,
       },
     ],
