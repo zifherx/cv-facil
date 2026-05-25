@@ -1,4 +1,4 @@
-import z from "zod"
+import z from "zod/v3"
 
 export const createCVSchema = z.object({
   title: z.string().min(1, "El título es requerido").max(120).trim(),

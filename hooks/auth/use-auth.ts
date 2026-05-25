@@ -19,7 +19,9 @@ export function useSession() {
 /** Devuelve el userId del usuario autenticado o null */
 export function useUserId(): string | null {
   const { data } = useSession()
-  return (data as { user?: { id: string } } | null)?.user?.id ?? null
+  return (
+    (data as { data: { user?: { id: string } } } | null)?.data.user?.id ?? null
+  )
 }
 
 // ─── Auth mutations ───────────────────────────────────────────────────────────

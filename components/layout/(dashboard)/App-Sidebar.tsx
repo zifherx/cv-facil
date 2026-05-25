@@ -26,7 +26,7 @@ export function AppSidebar() {
       : pathname.startsWith(href)
 
   return (
-    <Sidebar collapsible="icon" variant="inset">
+    <Sidebar collapsible="icon" variant="sidebar">
       {/* Header - logo */}
       <SidebarHeader className="pt-4 pb-3">
         <SidebarLogo />
@@ -57,7 +57,9 @@ export function AppSidebar() {
       <SidebarSeparator />
 
       {/* Footer - user info + logout */}
-      <SidebarFooter className="pb-4">{<UserFooter />}</SidebarFooter>
+      <SidebarFooter className="pb-4">
+        <UserFooter />
+      </SidebarFooter>
 
       {/* Rail - collapse handle on desktop */}
       <SidebarRail />

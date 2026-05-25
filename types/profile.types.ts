@@ -27,3 +27,14 @@ export type UpdateProfileDTO = {
 }
 
 export type UpdateAvatarDTO = { avatarUrl: string | null }
+
+export type PROFILE_PROPS = {
+  profile: Profile
+  userId: string
+}
+
+export interface ITabProfile {
+  label: string
+  href: string
+  disabled?: boolean
+}
