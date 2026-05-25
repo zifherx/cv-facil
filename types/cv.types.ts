@@ -1,3 +1,5 @@
+import { TEMPLATES_CV } from "../lib/constants/cv.constants"
+
 export type TemplateId = "erasmus" | "hopkins" | "yale" | "oxford" | "cambridge"
 
 export interface DocumentConfig {
@@ -39,3 +41,31 @@ export type UpsertSectionDTO = {
 }
 
 export type ReorderSectionsDTO = { orderedIds: string[] }
+
+export interface ICVTemplate {
+  id: string
+  label: string
+  color: string
+}
+
+export type TemplateIdType = (typeof TEMPLATES_CV)[number]["id"]
+
+export type TEMPLATE_MINI_CARD_PROPS = {
+  template: (typeof TEMPLATES_CV)[number]
+  selected: boolean
+  onSelect: () => void
+}
+
+export type CV_MINI_PREVIEW_PROPS = {
+  color: string
+}
+
+export type CV_CARD_PROPS = {
+  cv: CV
+  onDelete: (cv: CV) => void
+}
+
+export type CV_DELETE_DIALOG_PROPS = {
+  cv: CV | null
+  onClose: () => void
+}

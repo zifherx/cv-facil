@@ -25,3 +25,21 @@ export function getStrength(password: string): {
   ]
   return map[score - 1] ?? { score: 0, label: "", color: "" }
 }
+
+export function formatRelative(iso: string): string {
+  const diff = Date.now() - new Date(iso).getTime()
+  const mins = Math.floor(diff / 60_000)
+  const hours = Math.floor(diff / 3_600_000)
+  const days = Math.floor(diff / 86_400_000)
+
+  if (mins < 1) return "Ahora mismo"
+  if (mins < 60) return `Hace ${mins} min`
+  if (hours < 24) return `Hace ${hours}h`
+  if (days < 7) return `Hace ${days} día${days > 1 ? "s" : ""}`
+
+  return new Intl.DateTimeFormat("es", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(iso))
+}
