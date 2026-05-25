@@ -2,8 +2,10 @@ export interface Address {
   street: string
   city: string
   postalCode: string
-  country: string // ISO 3166-1 alpha-2  e.g. "PE", "US"
+  country: string // e.g. "PE", "US"
 }
+
+export type PartialAddress = Partial<Address>
 
 export interface Profile {
   id: string
@@ -25,9 +27,7 @@ export type CreateProfileDTO = {
   email: string
   phone?: string
   avatarUrl?: string | null
-  address?: Partial<Address>
+  address?: PartialAddress
 }
 
-export type UpdateProfileDTO = Partial<
-  Omit<Profile, "id" | "userId" | "createdAt" | "updatedAt">
->
+export type UpdateProfileDTO = Partial<Omit<CreateProfileDTO, "userId">>
